@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
-  LayoutAnimation
+  LayoutAnimation,
+  ImageBackground,
 } from 'react-native';
 import * as firebase from 'firebase';
 
@@ -35,22 +36,19 @@ export default class LoginScreen extends React.Component {
     LayoutAnimation.easeInEaseOut();
 
     return (
-      <View style={styles.container}>
-        <StatusBar barStyle='light-content'></StatusBar>
-        <Image
-          source={require('../assets/authHeader.png')}
-          style={{ marginTop: -176, marginLeft: -50 }}
-        ></Image>
-        <Image
-          source={require('../assets/authFooter.png')}
-          style={{ position: 'absolute', bottom: -325, right: -225 }}
-        ></Image>
-        <Image
-          source={require('../assets/loginLogo.png')}
-          style={{ marginTop: -110, alignSelf: 'center' }}
-        ></Image>
-        <Text style={styles.greeting}>{'Hello again.\nWelcome back.'}</Text>
+      <View style={styles.container}>    
+      
+     <ImageBackground
+          source={require('../assets/BG.png')}
+          style={{ height:'100%' , width:'100%' }}>
 
+        <StatusBar barStyle='light-content'></StatusBar>
+    
+        <Image
+          source={require('../assets/loginLogo-Copy.png')}
+          style={{ marginTop: 100, alignSelf: 'center',width:300,height:100 }}
+        ></Image>
+        
         <View style={styles.errorMessage}>
           {this.state.errorMessage && (
             <Text style={styles.error}> {this.state.errorMessage} </Text>
@@ -93,6 +91,8 @@ export default class LoginScreen extends React.Component {
             <Text style={{ fontWeight: '500', color: '#E9446A' }}>Sign Up</Text>
           </Text>
         </TouchableOpacity>
+        </ImageBackground>
+
       </View>
     );
   }
@@ -100,10 +100,10 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   greeting: {
-    marginTop: -32,
+    marginTop: 80,
     fontSize: 18,
     fontWeight: '400',
     textAlign: 'center'

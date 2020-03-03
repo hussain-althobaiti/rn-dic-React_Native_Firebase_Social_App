@@ -26,11 +26,12 @@ const AppContainer = createStackNavigator(
             )
           }
         },
-        Message: {
-          screen: MessageScreen,
+
+        Notification: {
+          screen: NotificationScreen,
           navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
-              <Ionicons name='ios-chatboxes' size={24} color={tintColor} />
+              <Ionicons name='ios-notifications' size={24} color={tintColor} />
             )
           }
         },
@@ -52,11 +53,11 @@ const AppContainer = createStackNavigator(
             )
           }
         },
-        Notification: {
-          screen: NotificationScreen,
+        Message: {
+          screen: MessageScreen,
           navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
-              <Ionicons name='ios-notifications' size={24} color={tintColor} />
+              <Ionicons name='ios-chatboxes' size={24} color={tintColor} />
             )
           }
         },
